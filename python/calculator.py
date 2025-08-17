@@ -1,12 +1,23 @@
 #calculator to sum untill we enter quit
-
+items = []
 sum = 0
+
+print("ABC Stores")
+
 while(True):
-    userInput = input("Enter the price or press q to exit: \n")
+    userInput = input("Enter the price or press q to exit: ")
+    
     if (userInput != 'q'):
-        sum = sum + int(userInput)
-        print(f"Order total so far: {sum}")
-        
+         price = int(userInput)
+         items.append(price)     # adds price to the list
+         sum = sum + price
+         print(f"Order total so far: {sum}")
     else:
-        print(f"Your Bill total is {sum}.Thanks for using our calculator. ")
+        print("\nReceipt:")
+        print("ABC Store")
+        
+        for item in items:
+            print(item)           #displays the individual items
+        print(f"Your total is {sum}.")
+        print(f"Thanks for using our calculator. ")
         break
